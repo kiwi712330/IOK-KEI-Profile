@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- 修正 viewport meta 標籤語法錯誤 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Profile - Kiwi HE</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700;900&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="slideshow-container">
+      <div class="slide" style="background-image: url('https://imgur.com/FBKctgk.jpg')"></div>
+      <div class="slide" style="background-image: url('https://imgur.com/Si2KkNw.jpg')"></div>
+      <div class="slide" style="background-image: url('https://imgur.com/gGSwQAy.jpg')"></div>
+    </div>
+    <div class="hero-text">
+      <h1>Hi, I'm Kiwi HE</h1>
+      <h3>Welcome to my profile!</h3>
+    </div>
+  </section>
+
+  <main class="container">
+    <!-- About Me Section -->
+    <section id="about" class="section">
+      <button class="section-toggle" aria-expanded="true" aria-controls="about-content">About Me</button>
+      <div id="about-content" class="section-content">
+        <div class="about-grid">
+          <img src="https://imgur.com/hBrMxFa.jpeg" alt="Portrait of Kiwi HE" class="about-img">
+          <div class="about-details">
+            <p><strong>Name</strong>: HE IOK KEI</p>
+            <p><strong>Education</strong>: St. Joseph Diocesano College (The fifth school), Expected Graduation 2026</p>
+            <p><strong>Contact</strong>: <a href="mailto:kiwikiwi888999@gmail.com">kiwikiwi888999@gmail.com</a></p>
+            <p><strong>Personal Introduction</strong>: I am a Form 5 business student, and also a member of the Student Union and the volleyball team. I enjoy collaborating and communicating with others, taking photos, and going out to explore different sceneries. My strengths are in Information Technology and accounting.</p>
+            <div class="social-icons">
+              <a href="https://www.instagram.com/_iok_kei_he_11?igsh=a3I0MXhtbzd1dnpl&utm_source=qr" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.freepik.com/256/12001/12001911.png?ga=GA1.1.327519813.1699094589&semt=ais_incoming" alt="Instagram icon" width="40">
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=100042088531494" target="_blank" rel="noopener">
+                <img src="https://cdn-icons-png.flaticon.com/512/10/10541.png" alt="Facebook icon" width="40">
+              </a>
+              <a href="mailto:kiwikiwi888999@gmail.com">
+                <img src="https://static.thenounproject.com/png/1560838-200.png" alt="Email icon" width="40">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+      <button class="section-toggle" aria-expanded="true" aria-controls="skills-content">Skills</button>
+      <div id="skills-content" class="section-content">
+        <div class="grid">
+          <article class="card">
+            <h3>Microsoft Office</h3>
+            <p>Certified Microsoft Office Specialist (MOS). Proficient in Word and Excel.</p>
+          </article>
+          <article class="card">
+            <h3>Programming & Design</h3>
+            <p>Experienced in C programming and Python. Basic skills in Adobe Photoshop for photo retouching, image composition, and simple design works.</p>
+          </article>
+          <article class="card">
+            <h3>Robotics</h3>
+            <p>Active participant in school robotics teams and competitions (ROBOFEST World Robot Competition). Skilled in assembling, programming, and debugging robots, and using sensors and motors.</p>
+          </article>
+          <article class="card">
+            <h3>Web Design</h3>
+            <p>Skilled in HTML, CSS, and JavaScript for basic website design.</p>
+          </article>
+          <article class="card">
+            <h3>Languages</h3>
+            <p>Fluent in Cantonese and Mandarin, intermediate in English, and basic in Portuguese.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <button class="section-toggle" aria-expanded="true" aria-controls="experience-content">Experience</button>
+      <div id="experience-content" class="section-content experience-list">
+        <div class="experience-row">
+          <!-- Robot Team -->
+          <div class="experience-gallery-block">
+            <h3>2018-2020<br>CDSJ5 Robot Team</h3>
+            <div class="experience-gallery" id="robot-gallery">
+              <button class="arrow arrow-left" aria-label="Previous image">
+                <svg viewBox="0 0 32 32" width="24" height="24"><polyline points="20,8 12,16 20,24" fill="none" stroke="black" stroke-width="2"/></svg>
+              </button>
+              <img src="https://imgur.com/LRjNOM8.jpeg" alt="Robot team group photo" class="active" />
+              <img src="https://imgur.com/Ixhs6xX.jpeg" alt="Robot team event photo" />
+              <img src="https://imgur.com/A9x3GDL.jpeg" alt="Robot team competition" />
+              <button class="arrow arrow-right" aria-label="Next image">
+                <svg viewBox="0 0 32 32" width="24" height="24"><polyline points="12,8 20,16 12,24" fill="none" stroke="black" stroke-width="2"/></svg>
+              </button>
+            </div>
+          </div>
+          <!-- Volleyball Team -->
+          <div class="experience-gallery-block">
+            <h3>2021-Now<br>CDSJ5 Volleyball Team</h3>
+            <div class="experience-gallery" id="volleyball-gallery">
+              <button class="arrow arrow-left" aria-label="Previous image">
+                <svg viewBox="0 0 32 32" width="24" height="24"><polyline points="20,8 12,16 20,24" fill="none" stroke="black" stroke-width="2"/></svg>
+              </button>
+              <img src="https://imgur.com/F0q7lkj.jpeg" alt="Volleyball team group photo" class="active" />
+              <img src="https://imgur.com/EOw3lAe.jpeg" alt="Volleyball team event photo" />
+              <img src="https://imgur.com/BLVOP1V.jpeg" alt="Volleyball team competition" />
+              <button class="arrow arrow-right" aria-label="Next image">
+                <svg viewBox="0 0 32 32" width="24" height="24"><polyline points="12,8 20,16 12,24" fill="none" stroke="black" stroke-width="2"/></svg>
+              </button>
+            </div>
+          </div>
+          <!-- Student Union -->
+          <div class="experience-gallery-block">
+            <h3>2024-2026<br>CDSJ5 Student Union</h3>
+            <div class="experience-gallery" id="union-gallery">
+              <img src="https://imgur.com/Sn6Rn8O.jpeg" alt="CDSJ5 student union group photo" class="active" />
+            </div>
+          </div>
+        </div>
+        <div class="experience-other">
+          <div class="experience-other-item">
+            <h3>2025<br>University of Macau East Asia Model United Nations Conference</h3>
+            <img src="https://imgur.com/RZxSJfh.jpeg" alt="University of Macau East Asia Model United Nations Conference" style="max-width: 100%; border-radius: 8px; margin-top: 1rem;">
+          </div>
+          <div class="experience-other-item">
+            <h3>2025<br>Youth Skills Promotion Program: Network Surveillance Technology and Electronics Technology</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section">
+      <button class="section-toggle" aria-expanded="true" aria-controls="certificates-content">Certificates & Awards & Achievements</button>
+      <div id="certificates-content" class="section-content">
+        <div class="grid">
+          <article class="card">
+            <h3>University of Macau East Asia Model United Nations Conference</h3>
+            <p>2025</p>
+            <img src="https://imgur.com/pE3nQcV.jpeg" alt="UM Model United Nations Certificate" height="300">
+          </article>
+          <article class="card">
+            <h3>ICBC Macau Youth Association's "Financial Knowledge on Campus" course</h3>
+            <p>2025</p>
+            <img src="https://imgur.com/Gggu2Pi.jpeg" alt="ICBC course certificate" height="300">
+          </article>
+          <article class="card">
+            <h3>Microsoft Office Specialist (MOS)</h3>
+            <p>2025</p>
+            <img src="https://imgur.com/1xsiqJa.jpeg" alt="MOS certificate" height="200" width="300">
+          </article>
+          <article class="card">
+            <h3>Microsoft Office Specialist (MOS)</h3>
+            <p>2025</p>
+            <img src="https://imgur.com/hSRZOJ6.jpg" alt="MOS certificate 2" height="200" width="300">
+          </article>
+          <article class="card">
+            <h3>Guangdong-Hong Kong-Macau Greater Bay Youth Volleyball League</h3>
+            <p>2024</p>
+            <img src="https://imgur.com/Zm7LvS4.jpg" alt="Volleyball League certificate" height="300">
+          </article>
+          <article class="card">
+            <h3>The Associated Board of the Royal Schools of Music</h3>
+            <p>2021</p>
+            <img src="https://imgur.com/vZA4BiP.jpeg" alt="Music certificate" height="300" width="300">
+          </article>
+          <article class="card">
+            <h3>ROBOFEST World Robot Competition (USA) 1st Place</h3>
+            <p>2019</p>
+            <img src="https://imgur.com/bp2aX7a.jpeg" alt="ROBOFEST USA 1st Place certificate" height="300">
+          </article>
+          <article class="card">
+            <h3>ROBOFEST World Robot Competition (Hong Kong and Macau) BOTTLE SUMO 1st Place</h3>
+            <p>2019</p>
+            <img src="https://imgur.com/45YY2Rm.jpeg" alt="ROBOFEST Bottle Sumo 1st Place certificate" height="300">
+          </article>
+          <article class="card">
+            <h3>ROBOFEST World Robot Competition (Hong Kong and Macau) GAME 2nd Place</h3>
+            <p>2019</p>
+            <img src="https://imgur.com/sDjcllj.jpeg" alt="ROBOFEST Game 2nd Place certificate" height="300">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section">
+      <button class="section-toggle" aria-expanded="true" aria-controls="portfolio-content">Portfolio</button>
+      <div id="portfolio-content" class="section-content">
+        <div class="grid">
+          <article class="card">
+            <h3>Malaysia Volleyball Rex V Game Competition</h3>
+            <p>In Dec 2024, our volleyball team went to Malaysia for training, which was also our first time going to another country. It was an unforgettable memory.</p>
+            <a href="https://www.instagram.com/p/DDcH3sizKAR/?igsh=OGhwbWx6OWl6ZnNw" target="_blank" rel="noopener">View More Details</a>
+            <img src="https://imgur.com/bEpiyzv.jpeg" alt="Malaysia Volleyball competition" height="250">
+          </article>
+          <article class="card">
+            <h3>ROBOFEST World Robot Competition (USA) 1st Place</h3>
+            <p>In May 2019, my teammates and I ranked first in the Hong Kong-Macau region, allowing us to represent Macau at the global robotics competition in the United States. At that competition, we achieved excellent results, defeating teams from around the world and ultimately winning the championship.</p>
+            <a href="https://www.robofesthk.org/robofestceremony2019" target="_blank" rel="noopener">View More Details</a>
+            <img src="https://imgur.com/Hj5hbId.jpeg" alt="ROBOFEST USA 1st Place event photo" width="800" height="800">
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <button class="section-toggle" aria-expanded="true" aria-controls="contact-content">Contact</button>
+      <div id="contact-content" class="section-content">
+        <div class="grid">
+          <article class="card">
+            <h3>Phone</h3>
+            <p><a href="tel:+85363339051">+853-6333-9051</a></p>
+          </article>
+          <article class="card">
+            <h3>Email</h3>
+            <p><a href="mailto:kiwikiwi888999@gmail.com">kiwikiwi888999@gmail.com</a></p>
+          </article>
+          <article class="card">
+            <h3>Instagram</h3>
+            <p><a href="https://www.instagram.com/_iok_kei_he_11?igsh=a3I0MXhtbzd1dnpl&utm_source=qr" target="_blank" rel="noopener">www.instagram.com/_iok_kei_he_11</a></p>
+          </article>
+          <article class="card">
+            <h3>Facebook</h3>
+            <p><a href="https://www.facebook.com/profile.php?id=100042088531494" target="_blank" rel="noopener">www.facebook.com/Iokii Kei</a></p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a href="#top" id="backToTop" aria-label="Back to top">
+    <img src="https://i.imgur.com/fDz62Wi.png" alt="Back to top button" width="60" height="60">
+  </a>
+
+  <footer>
+    <p>© 2025 HE IOK KEI. Personal Information Introduction Website.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

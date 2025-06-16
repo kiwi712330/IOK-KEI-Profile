@@ -1,0 +1,544 @@
+/* ====================
+   Reset and Base Styles
+   ==================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Exo 2', 'Roboto', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* =========================
+   Anchor Offset for Sections
+   ========================= */
+section {
+  scroll-margin-top: 80px; /* Adjust if your header height changes */
+}
+
+/* ========================
+   Header and Navigation
+   ======================== */
+header {
+  background-color: #1a2b3c;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-start;
+  list-style: none;
+  flex-wrap: wrap;
+  padding-left: 1rem;
+}
+
+nav ul li {
+  margin: 0.5rem 1rem;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 900;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #cc3700;
+}
+
+/* ==============================
+   Hero Section with Slideshow
+   ============================== */
+.hero {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.slideshow-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-text h3 {
+  font-size: 1.8rem;
+}
+
+/* =====================
+   Main Container
+   ===================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* =====================
+   Section Styles
+   ===================== */
+.section {
+  margin-bottom: 2rem;
+}
+
+.section-toggle {
+  width: 100%;
+  background-color: #00635D;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  font-size: 1.8rem;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.section-toggle:hover {
+  background-color: #004D47;
+}
+
+.section-toggle::before {
+  content: '▼ ';
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.section-toggle[aria-expanded="false"]::before {
+  transform: rotate(-90deg);
+}
+
+.section-content {
+  display: block;
+  padding: 1rem 0;
+}
+
+.section-content[hidden] {
+  display: none;
+}
+
+/* =====================
+   Grid Layout
+   ===================== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Contact Section Grid Layout */
+#contact .grid {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, auto);
+}
+
+/* =====================
+   Skills Section: 橫向flex排版，像經驗區一樣 + 互動
+   ===================== */
+#skills .grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+#skills .card {
+  flex: 1 1 320px;
+  min-width: 250px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+#skills .card:hover {
+  transform: scale(1.06) translateY(-6px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+  z-index: 2;
+}
+
+/* 彈窗 (技能詳細說明) */
+#skill-modal {
+  display: none;
+  position: fixed; z-index: 9999; left: 0; top: 0; width: 100vw; height: 100vh;
+  align-items: center; justify-content: center;
+}
+#skill-modal .modal-bg {
+  position: absolute; left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.35);
+}
+#skill-modal .modal-content {
+  position: relative;
+  background: #fff; border-radius: 12px; box-shadow: 0 8px 32px rgba(0,0,0,0.19); 
+  padding: 2rem 2.5rem; min-width: 250px; max-width: 95vw; min-height: 100px;
+  animation: popupShow 0.19s;
+}
+#skill-modal .modal-close {
+  position: absolute; right: 1.1rem; top: 1rem; font-size: 2.3rem; color: #888; cursor: pointer;
+  transition: color 0.2s;
+}
+#skill-modal .modal-close:hover { color: #00635D; }
+@keyframes popupShow {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* =====================
+   Card Styles
+   ===================== */
+.card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  color: #1a2b3c;
+  margin-bottom: 0.5rem;
+  font-weight: 900;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-top: 1rem;
+  display: block;
+  object-fit: contain;
+}
+
+.card a {
+  color: #00aaff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* =====================
+   About Section
+   ===================== */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+}
+
+.about-details p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.social-icons img {
+  transition: transform 0.3s;
+}
+
+.social-icons img:hover {
+  transform: scale(1.2);
+}
+
+/* =====================
+   Skills/Experience h3
+   ===================== */
+#skills .card h3 {
+  color: #b22222;
+  font-size: 1.5rem;
+}
+
+#experience h3 {
+  color: #b22222;
+  font-size: 1.3rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* =====================
+   Experience Gallery
+   ===================== */
+.experience-gallery {
+  position: relative;
+  width: 350px;
+  max-width: 90vw;
+  margin: 0 auto;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eee;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.experience-gallery img {
+  display: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+
+.experience-gallery img.active {
+  display: block;
+  opacity: 1;
+}
+
+.experience-gallery .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.30);
+  border: 2.5px solid #00635D;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.94;
+  box-shadow: 0 2px 8px rgba(26,43,60,0.11);
+  transition: opacity 0.2s, background 0.2s, border-color 0.2s;
+}
+
+.experience-gallery .arrow-left {
+  left: 10px;
+}
+
+.experience-gallery .arrow-right {
+  right: 10px;
+}
+
+.experience-gallery .arrow:hover {
+  opacity: 1;
+  background: rgba(0,99,93,0.20);
+  border-color: #fff;
+}
+
+.experience-gallery .arrow svg {
+  width: 32px;
+  height: 32px;
+  stroke: #00635D;
+  stroke-width: 4.5px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+.experience-gallery .arrow:hover svg {
+  stroke: #fff;
+  opacity: 1;
+}
+
+/* =====================
+   Experience Layout
+   ===================== */
+.experience-list {
+  margin-bottom: 2rem;
+}
+
+.experience-row {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.experience-gallery-block {
+  flex: 1 1 320px;
+  min-width: 320px;
+  max-width: 370px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.experience-gallery-block h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.experience-other {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.experience-other-item {
+  flex: 1 1 320px;
+  min-width: 320px;
+  max-width: 370px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 1.2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.experience-other-item h3 {
+  color: #b22222;
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+/* =====================
+   Image Gallery
+   ===================== */
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+#experience .image-gallery {
+  display: flex;
+  justify-content: center;
+}
+
+/* Prevent image stretching in gallery */
+.image-gallery img,
+#experience .image-gallery img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px;
+  object-fit: contain;
+}
+
+/* =====================
+   Certificates Effects
+   ===================== */
+#certificates .card img {
+  transition: transform 0.25s cubic-bezier(.22,.68,.53,1.01), box-shadow 0.25s;
+  cursor: zoom-in;
+  z-index: 1;
+}
+
+#certificates .card img:hover {
+  transform: scale(1.7) translateY(-10px);
+  box-shadow: 0 8px 36px rgba(0,0,0,0.31);
+  z-index: 10;
+  position: relative;
+}
+
+/* 證書大圖預覽互動 */
+#image-modal {
+  display: none;
+  position: fixed; z-index: 9998; left: 0; top: 0; width: 100vw; height: 100vh;
+  align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.45);
+}
+#image-modal .modal-bg {
+  position: absolute; left: 0; top: 0; width: 100vw; height: 100vh;
+}
+#image-modal .modal-img {
+  max-width: 88vw; max-height: 88vh; border-radius: 10px; box-shadow: 0 4px 32px rgba(0,0,0,0.33);
+  position: relative; z-index: 2;
+}
+#image-modal .modal-close {
+  position: absolute; right: 5vw; top: 3vh; font-size: 3rem; color: #fff; cursor: pointer; z-index: 3;
+  filter: drop-shadow(0 1px 16px #333);
+}
+#image-modal .modal-close:hover { color: #cc3700; }
+
+/* =====================
+   Back to Top Button
+   ===================== */
+#backToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  opacity: 0.7;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+#backToTop:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* =====================
+   Footer
+   ===================== */
+footer {
+  background-color: #1a2b3c;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
